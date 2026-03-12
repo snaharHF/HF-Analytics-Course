@@ -1,0 +1,52 @@
+import random
+
+BOLD = '\033[1m'
+
+print(BOLD + "Rock, Paper, Scissors Game\n")
+
+options = ["rock", "paper", "scissors"]
+
+while True:
+    
+    usr_command = input("\nType Your Selection: Rock, Paper, or Scissors (Type 'Quit' to Exit Game):").lower()
+
+    if usr_command == "quit":
+        print(BOLD + "\nEnd Game")
+        
+        break
+        
+    elif usr_command not in options:
+        print("\nSelection Not Valid. Please Try Again\n")
+
+    else:
+
+        comp_pick = random.choice(options)
+        print("\nYou Chose:", usr_command)
+        print("\nComputer Chooses:", comp_pick)
+    
+        if usr_command == comp_pick:
+            print("\nIt's a Tie!")
+    
+        elif usr_command == "rock":
+            if comp_pick == "scissors":
+                print("\nYou Win!")
+            else:
+                print("\nComputer Wins!")
+    
+        elif usr_command == "paper":
+            if comp_pick == "rock":
+                print("\nYou Win!")
+            else:
+                print("\nComputer Wins!")
+    
+        elif usr_command == "scissors":
+            if comp_pick == "paper":
+                print("\nYou Win!")
+            else:
+                print("\nComputer Wins!")
+
+       
+        play_again = input("\nWould You Like to Play Again? Type 'Yes' or 'No'): ").lower()
+        if play_again == "no":
+            print(BOLD + "\nEnd Game")
+            break
