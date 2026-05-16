@@ -8,7 +8,6 @@ import pandas as pd
 import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
-from sodapy import Socrata
 
 df = pd.read_csv("NYPD_Arrests_Data_(Historic)_20260515.csv")
 
